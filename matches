@@ -1,0 +1,59 @@
+create table matches (
+    id bigserial primary key,
+    league text not null,
+    season text not null,
+    hometeam text not null,
+    awayteam text not null,
+    match_start_at timestamp with time zone,
+    match_began_at timestamp with time zone,
+    match_ended_at timestamp with time zone,
+    hometeam_score int default 0,
+    awayteam_score int default 0,
+    round int,
+    spectators int
+);
+
+create index league_index on matches (league);
+create index hometeam_index on matches (hometeam);
+create index awayteam_index on matches (awayteam);
+create index season_index on teams (season);
+
+insert into matches (league, season, hometeam, awayteam, match_start_at, round) values
+    ('La Liga', '2015/2016', 'Getafe', 'Granada', '2015-08-30 22:30:00+01', 2),
+    ('La Liga', '2015/2016', 'Las Palmas', 'Levante', '2015-08-30 22:30:00+01', 2),
+    ('La Liga', '2015/2016', 'Sevilla', 'Athlético Madrid', '2015-08-30 20:30:00+01', 2),
+    ('La Liga', '2015/2016', 'Valencia', 'Deportivo La Coruña', '2015-08-30 20:30:00+01', 2),
+    ('La Liga', '2015/2016', 'Eibar', 'Athletic Club', '2015-08-30 18:30:00+01', 2),
+    ('La Liga', '2015/2016', 'Real Madrid', 'Betis', '2015-08-29 20:30:00+01', 2),
+    ('La Liga', '2015/2016', 'Celta Vigo', 'Rayo Vallecano', '2015-08-29 22:00:00+01', 2),
+    ('La Liga', '2015/2016', 'Barcelona', 'Málaga', '2015-08-29 20:30:00+01', 2),
+    ('La Liga', '2015/2016', 'Real Sociedad', 'Sporting Gijón', '2015-08-29 18:30:00+01', 2),
+    ('La Liga', '2015/2016', 'Villarreal', 'Espanyol', '2015-08-28 20:30:00+01', 2),
+    ('La Liga', '2015/2016', 'Granada', 'Eibar', '2015-08-24 20:30:00+01', 1),
+    ('La Liga', '2015/2016', 'Betis', 'Villarreal', '2015-08-23 22:30:00+01', 1),
+    ('La Liga', '2015/2016', 'Levante', 'Celta Vigo', '2015-08-23 22:00:00+01', 1),
+    ('La Liga', '2015/2016', 'Sporting Gijón', 'Real Madrid', '2015-08-23 20:30:00+01', 1),
+    ('La Liga', '2015/2016', 'Athletic Club', 'Barcelona', '2015-08-23 18:30:00+01', 1)
+;
+
+
+    ('La Liga', '2015/2016', 'Athletic Club'),
+    ('La Liga', '2015/2016', 'Athlético Madrid'),
+    ('La Liga', '2015/2016', 'Barcelona'),
+    ('La Liga', '2015/2016', 'Celta Vigo'),
+    ('La Liga', '2015/2016', 'Deportivo La Coruña'),
+    ('La Liga', '2015/2016', 'Eibar'),
+    ('La Liga', '2015/2016', 'Espanyol'),
+    ('La Liga', '2015/2016', 'Getafe'),
+    ('La Liga', '2015/2016', 'Granada'),
+    ('La Liga', '2015/2016', 'Las Palmas'),
+    ('La Liga', '2015/2016', 'Levante'),
+    ('La Liga', '2015/2016', 'Málaga'),
+    ('La Liga', '2015/2016', 'Rayo Vallecano'),
+    ('La Liga', '2015/2016', 'Real Betis'),
+    ('La Liga', '2015/2016', 'Real Madrid'),
+    ('La Liga', '2015/2016', 'Real Sociedad'),
+    ('La Liga', '2015/2016', 'Sevilla'),
+    ('La Liga', '2015/2016', 'Sporting Gijón'),
+    ('La Liga', '2015/2016', 'Valencia'),
+    ('La Liga', '2015/2016', 'Villarreal')
