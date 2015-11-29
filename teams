@@ -1,0 +1,39 @@
+create table teams (
+    id bigserial primary key,
+    league text not null,
+    season text not null,
+    team text not null,
+    points int default 0,
+    won int default 0,
+    draw int default 0,
+    lost int default 0,
+    goals_for int default 0,
+    goals_against int default 0
+);
+
+create index league_index on teams (league);
+create index team_index on teams (team);
+create index season_index on teams (season);
+
+insert into teams (league, season, team) values
+    ('La Liga', '2015/2016', 'Athletic Club'),
+    ('La Liga', '2015/2016', 'Athlético Madrid'),
+    ('La Liga', '2015/2016', 'Barcelona'),
+    ('La Liga', '2015/2016', 'Celta Vigo'),
+    ('La Liga', '2015/2016', 'Deportivo La Coruña'),
+    ('La Liga', '2015/2016', 'Eibar'),
+    ('La Liga', '2015/2016', 'Espanyol'),
+    ('La Liga', '2015/2016', 'Getafe'),
+    ('La Liga', '2015/2016', 'Granada'),
+    ('La Liga', '2015/2016', 'Las Palmas'),
+    ('La Liga', '2015/2016', 'Levante'),
+    ('La Liga', '2015/2016', 'Málaga'),
+    ('La Liga', '2015/2016', 'Rayo Vallecano'),
+    ('La Liga', '2015/2016', 'Real Betis'),
+    ('La Liga', '2015/2016', 'Real Madrid'),
+    ('La Liga', '2015/2016', 'Real Sociedad'),
+    ('La Liga', '2015/2016', 'Sevilla'),
+    ('La Liga', '2015/2016', 'Sporting Gijón'),
+    ('La Liga', '2015/2016', 'Valencia'),
+    ('La Liga', '2015/2016', 'Villarreal')
+;
