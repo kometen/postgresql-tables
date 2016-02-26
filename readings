@@ -1,0 +1,18 @@
+create table readings (
+    id bigserial primary key,
+    _id int not null,
+    date timestamp with time zone,
+    relative_humidity real not null,
+    precipitation real not null,
+    road_surface_temperature real not null,
+    snow_depth real not null,
+    wind_speed real not null,
+    wind_direction smallint not null,
+    temperature real not null,
+    dew_point_temperature real not null,
+    visibility smallint not null,
+    unique (_id, date)
+);
+
+create index _id_index on readings (_id);
+create index date_index on readings (date);
