@@ -1,0 +1,7 @@
+create table readings_json (
+    id serial,
+    site_id int,
+    measurementTimeDefault timestamp with time zone,
+    doc jsonb,
+    unique (site_id, measurementTimeDefault)
+);
