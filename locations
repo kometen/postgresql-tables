@@ -1,6 +1,6 @@
 create table locations (
     id bigserial primary key,
-    _id int not null,
+    site_id int not null,
     description text not null,
     coordinate point not null,
     unique (_id)
