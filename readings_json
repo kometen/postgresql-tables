@@ -7,6 +7,6 @@ create table readings_json (
     unique (site_id, measurementtimedefault)
 );
 
-create index site_id_index on locations(site_id);
-create index measurementtimedefault_index on locations(measurementtimedefault);
-create index coordinate_index on locations using gist(coordinate);
+create index readings_json_site_id_index on locations(site_id);
+create index readings_json_measurementtimedefault_index on locations(measurementtimedefault);
+create index readings_json_coordinate_index on locations using gist(coordinate);
